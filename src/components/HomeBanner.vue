@@ -68,6 +68,7 @@ span{
 
     #main-banner{
         background-position: right;
+        height: 180px;
     }
 }
 
@@ -75,19 +76,13 @@ span{
 @media (max-width: 34.37em) {
 
     h2{
-        font-size: 26px;
-        margin-top: 30px;
+        font-size: 20px;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
 
     span{
-        font-size: 36px;
+        font-size: 24px;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    }
-
-    #main-banner{
-        align-items: center;
-        justify-content:flex-start;
     }
     
 }

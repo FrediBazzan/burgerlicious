@@ -77,5 +77,30 @@
       "type": "Done"
     }
   ],
-  "burgers": []
+  "burgers": [
+    {
+      "id": "555a",
+      "name": "Josias Fernandes",
+      "meat": "Striploin",
+      "bread": "Whole Grain",
+      "extras": [
+        "Lettuce",
+        "Tomato",
+        "Cheddar",
+        "Caramelized Onions"
+      ],
+      "status": "In Production"
+    },
+    {
+      "id": "72b7",
+      "name": "Silvio Santos",
+      "meat": "Chuck",
+      "bread": "White Italian",
+      "extras": [
+        "Bacon",
+        "Cheddar"
+      ],
+      "status": "Ordered"
+    }
+  ]
 }

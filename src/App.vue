@@ -34,12 +34,14 @@ export default{
 }
 #container-app{
   min-height: calc(100vh - 224px);
+  width: 100%;
 
 }
 
 .main-container{
-  margin: 50px;
+  margin: 3em 0;
   min-height: 250px;
+  width: 100%;
 }
 
 h1{
@@ -47,5 +49,13 @@ h1{
   font-size: 42px;
   margin-bottom: 30px;
   color: #222;
+}
+
+/*MOBILE VERSION*/
+@media (max-width: 700px) {
+
+h1{
+  font-size: 26px;
+}
 }
 </style>

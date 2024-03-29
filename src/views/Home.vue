@@ -22,10 +22,6 @@ export default{
 
 <style scoped>
 
-.HomeBanner{
-  width: 50%;
-}
-
 .main-container{
   display: flex;
   flex-direction: column;

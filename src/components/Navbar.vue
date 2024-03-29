@@ -57,14 +57,6 @@ nav a:hover{
   color: #FFF;
 }
 
- /*MEDIA QUERY 550px*/
- @media (max-width: 34.37em) {
-
-  #logo-url img{
-    display: none;
-  }
- }
-
 
 
 </style>

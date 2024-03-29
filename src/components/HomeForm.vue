@@ -22,7 +22,7 @@
                 <div class="input-container">
                     <label for="meat">Burger:</label>
                     <select name="meat" id="meat" v-model="meat">
-                    <option value="" selected>Choose your burger meat:</option>
+                    <option value="" selected>Choose your burger:</option>
                     <option v-for="meat in meats" :key="meat.id" :value="meat.type"> {{ meat.type }} </option>
                     </select>
                 </div>
@@ -133,7 +133,7 @@ export default {
 <style scoped>
 
 #form-container{
-    margin: 40px 0 80px 0;
+    margin: 2.5em 1em 5em 1em;
 }
 #burger-form{
     max-width: 500px;
@@ -208,7 +208,8 @@ input, select {
 @media (max-width: 700px) {
 
     #burger-form{
-    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .input-container{

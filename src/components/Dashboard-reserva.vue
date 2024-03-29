@@ -1,31 +1,40 @@
 <template>
-    <div id="burger-container">
+    <div id="burger-table">
+        <div>
 
-                <div class="burger-template" v-for="burger in burgers" :key="burger.id">
-                    <div class="lines"> <p> <span>ID: </span>{{ burger.id }}</p></div>
-                    <div class="lines"> <p> <span>Name: </span>{{ burger.name }}</p> </div>
-                    <div class="lines"><p> <span>Bread: </span>{{ burger.bread }} </p> </div>
-                    <div class="lines"> <p> <span>Meat: </span>{{ burger.meat }} </p></div>
+            <div id="burger-table-heading">
+                <div class="order-id">#:</div>
+                <div class="customer">Customer's Name</div>
+                <div class="bread">Bread type</div>
+                <div class="meat">Meat type</div>
+                <div class="extras">Extras</div>
+                <div class="actions">Actions</div>
+            </div>
 
-                    <div class="lines">
-                        <ul class="extras">
+
+            <div id="burger-table-rows">
+                <div class="burger-table-row" v-for="burger in burgers" :key="burger.id">
+                    <div class="order-number">{{ burger.id }}</div>
+                    <div> {{ burger.name }} </div>
+                    <div> {{ burger.bread }} </div>
+                    <div> {{ burger.meat }} </div>
+                    <div>
+                        <ul>
                             <li v-for="(extra, index) in burger.extras" :key="index"> {{ extra }} </li>
                         </ul>
                     </div>
-                    
-                    <div class="status-line">
-                        <div class="status-color" :class="{'in-production': burger.status === 'In Production', 'done': burger.status === 'Done'}"></div>
-                        <select name="status" class="status" @change="statusUpdate($event, burger.id)">
+                    <div>
+                        <select name="status" class="status" :class="{'ordered': burger.status === 'Ordered', 'in-production': burger.status === 'In Production', 'done': burger.status === 'Done'}" @change="statusUpdate($event, burger.id)">
                             <option v-for="s in status" :key="s.id" :value="s.type" :selected="burger.status == s.type"> {{ s.type }} </option>
                         </select>
 
-                        <button class="delete-btn" @click="deleteBurger(burger.id)">Delete Order</button>
-
+                        <button class="delete-btn" @click="deleteBurger(burger.id)">Delete</button>
                     </div>
 
-                        
-
                 </div>
+            </div>
+
+        </div>
     </div>
 
 </template>
@@ -116,72 +125,53 @@ export default {
 
 <style scoped>
 
-    #burger-container{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 2em;
-        width: auto;
-        margin: 1em 2em;
-        
+    #burger-table{
+        max-width: 1200px;
+        margin: 0 auto;
     }
 
-    .burger-template{
-        border: 1px solid #666;
-        border-radius: 5px;
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        min-height: 250px;
-        padding: 1em;
-    }
-
-    .lines {
-        padding: .3em;
-        background-color: #f0f0f0;
-        border-radius: 5px;
-        width: auto;
-        margin: 5px;
-        list-style-type: none;
-    }
-
-    .extras{
+    #burger-table-heading,
+    #burger-table-rows,
+    .burger-table-row{
         display: flex;
         flex-wrap: wrap;
-        margin: 5px;
-        gap: .5em;
+        gap: 1px;
     }
 
-    .extras li{
-        display: flex;
-        
-    }
-
-    
-    span {
+    #burger-table-heading{
         font-weight: bold;
+        padding: 12px;
+        border-bottom: 3px solid #333;
+    }
+
+    #burger-table-heading div,
+    .burger-table-row div{
+        width: 18%;
+
+    }
+
+    .burger-table-row{
+        width: 100%;
+        padding: 12px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    #burger-table-heading .order-id,
+    .burger-table-row .order-number{
+        width: 5%;
     }
 
     select {
-        padding: 10px;
-        margin: 5px;
-        width: auto;
-
+        padding: 12px 6px;
+        margin-right: 12px;
     }
 
-    .status-line{
-        display: flex;
-        align-items: center;
-    }
-
-    .status-color{
-        width: 1.5em;
-        height: 1.5em;
-        border-radius: 50%;
-        margin: 5px;
+    .ordered {
+    background-color: white;
     }
 
     .in-production {
-        background-color: rgb(254, 123, 0);
+        background-color: rgb(244, 145, 17);
     }
 
     .done {
@@ -194,33 +184,16 @@ export default {
         color: #FCBA03;
         font-weight: bold;
         border: 2px solid #222;
-        border-radius: 5px;
-        padding: 8px;
+        padding: 10px;
         font-size: 16px;
-        margin: 10px;
+        margin: 0 auto;
         cursor: pointer;
         transition: .5s;
-        width: auto;
     }
 
     .delete-btn:hover{
         background-color: transparent;
         color: #222;
     }
-
-    /*MOBILE VERSION*/
-@media (max-width: 700px) {
-
-    #burger-container{
-        grid-template-columns: 1fr;
-        gap: 1em;
-        margin: 1em;
-        
-    }
-
-    .burger-template{
-        width: 100%;
-    }
-}
 
 </style>
