@@ -1,0 +1,93 @@
+{
+  "ingredients": {
+    "breads": [
+      {
+        "id": 1,
+        "type": "White Italian"
+      },
+      {
+        "id": 2,
+        "type": "3 Cheese"
+      },
+      {
+        "id": 3,
+        "type": "Parmesan and Oregano"
+      },
+      {
+        "id": 4,
+        "type": "Whole Grain"
+      }
+    ],
+    "meats": [
+      {
+        "id": 1,
+        "type": "Striploin"
+      },
+      {
+        "id": 2,
+        "type": "Chuck"
+      },
+      {
+        "id": 3,
+        "type": "Rump Steak"
+      },
+      {
+        "id": 4,
+        "type": "Veggie"
+      }
+    ],
+    "extras": [
+      {
+        "id": 1,
+        "type": "Bacon"
+      },
+      {
+        "id": 2,
+        "type": "Cheddar"
+      },
+      {
+        "id": 3,
+        "type": "Salami"
+      },
+      {
+        "id": 4,
+        "type": "Tomato"
+      },
+      {
+        "id": 5,
+        "type": "Caramelized Onions"
+      },
+      {
+        "id": 6,
+        "type": "Picles"
+      }
+    ]
+  },
+  "status": [
+    {
+      "id": "1",
+      "type": "Ordered"
+    },
+    {
+      "id": "2",
+      "type": "In Production"
+    },
+    {
+      "id": "3",
+      "type": "Done"
+    }
+  ],
+  "burgers": [
+    {
+      "id": "f1ae",
+      "name": "Fredi",
+      "meat": "Chuck",
+      "bread": "White Italian",
+      "extras": [
+        "Salami",
+        "Tomato"
+      ],
+      "status": "Done"
+    }
+  ]
+}
