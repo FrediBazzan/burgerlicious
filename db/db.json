@@ -77,17 +77,5 @@
       "type": "Done"
     }
   ],
-  "burgers": [
-    {
-      "id": "f1ae",
-      "name": "Fredi",
-      "meat": "Chuck",
-      "bread": "White Italian",
-      "extras": [
-        "Salami",
-        "Tomato"
-      ],
-      "status": "Done"
-    }
-  ]
+  "burgers": []
 }
