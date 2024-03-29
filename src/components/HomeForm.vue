@@ -102,7 +102,7 @@ export default {
             const res = await req.json();
 
             //mensagem de pedido feito com sucesso!
-                this.msg = 'Pedido realizado com sucesso!'
+                this.msg = 'Order successful! Please wait to collect it!'
             //limpar mensagem da tela
                 setTimeout(() => this.msg = '', 5000);
             //limpando os campos do form depois de submeter o pedido.
