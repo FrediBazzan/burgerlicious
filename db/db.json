@@ -79,19 +79,6 @@
   ],
   "burgers": [
     {
-      "id": "555a",
-      "name": "Josias Fernandes",
-      "meat": "Striploin",
-      "bread": "Whole Grain",
-      "extras": [
-        "Lettuce",
-        "Tomato",
-        "Cheddar",
-        "Caramelized Onions"
-      ],
-      "status": "In Production"
-    },
-    {
       "id": "72b7",
       "name": "Silvio Santos",
       "meat": "Chuck",
@@ -100,7 +87,116 @@
         "Bacon",
         "Cheddar"
       ],
+      "status": "Done"
+    },
+    {
+      "id": "1d8b",
+      "name": "joao",
+      "meat": "Striploin",
+      "bread": "White Italian",
+      "extras": [
+        "Bacon"
+      ],
+      "status": "Done"
+    },
+    {
+      "id": "1887",
+      "name": "Pedro de Lara",
+      "meat": "Rump Steak",
+      "bread": "3 Cheese",
+      "extras": [
+        "Lettuce",
+        "Caramelized Onions",
+        "Picles",
+        "Tomato",
+        "Cheddar",
+        "Bacon"
+      ],
+      "status": "In Production"
+    },
+    {
+      "id": "e1bc",
+      "name": "Robert Abela",
+      "meat": "Veggie",
+      "bread": "Whole Grain",
+      "extras": [
+        "Picles"
+      ],
+      "status": "In Production"
+    },
+    {
+      "id": "a008",
+      "name": "Celso Russomano",
+      "meat": "Striploin",
+      "bread": "3 Cheese",
+      "extras": [
+        "Bacon",
+        "Lettuce",
+        "Tomato",
+        "Cheddar"
+      ],
       "status": "Ordered"
+    },
+    {
+      "id": "64f3",
+      "name": "Carla Peres",
+      "meat": "Chuck",
+      "bread": "Parmesan and Oregano",
+      "extras": [
+        "Bacon",
+        "Tomato",
+        "Picles"
+      ],
+      "status": "Ordered"
+    },
+    {
+      "id": "6fc3",
+      "name": "Ronaldinho Gaucho",
+      "meat": "Striploin",
+      "bread": "White Italian",
+      "extras": [
+        "Bacon",
+        "Caramelized Onions",
+        "Picles",
+        "Cheddar"
+      ],
+      "status": "Ordered"
+    },
+    {
+      "id": "2fbe",
+      "name": "Maradona",
+      "meat": "Rump Steak",
+      "bread": "White Italian",
+      "extras": [
+        "Bacon",
+        "Cheddar"
+      ],
+      "status": "Ordered"
+    },
+    {
+      "id": "9f12",
+      "name": "Manoel Gomes",
+      "meat": "Striploin",
+      "bread": "White Italian",
+      "extras": [
+        "Bacon",
+        "Cheddar",
+        "Picles"
+      ],
+      "status": "Ordered"
+    }
+  ],
+  "delivered-burgers": [
+    {
+      "id": "c244",
+      "name": "Liminha do SBT",
+      "meat": "Rump Steak",
+      "bread": "3 Cheese",
+      "extras": [
+        "Bacon",
+        "Tomato"
+      ],
+      "status": "Done"
     }
   ]
 }

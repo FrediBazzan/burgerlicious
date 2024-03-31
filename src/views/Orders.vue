@@ -1,6 +1,5 @@
 <template>
   <div class="main-container">
-    <h1>Manage your orders:</h1>
     <Dashboard />
   </div>
 </template>

@@ -5,7 +5,8 @@
         <p>Burgerlicious</p>
     </router-link>
     <router-link to="/">Home</router-link>
-    <router-link to="/pedidos">Orders</router-link>
+    <router-link to="/orders">Orders</router-link>
+    <router-link to="/delivered-orders">Delivered Orders</router-link>
   </nav>
 </template>
 
