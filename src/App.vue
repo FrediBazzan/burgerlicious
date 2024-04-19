@@ -3,7 +3,6 @@
   <div id="container-app">
     <router-view/>
   </div>
-    <Footer />
 </template>
 
 <script> 

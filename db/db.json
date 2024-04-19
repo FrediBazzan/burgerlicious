@@ -79,124 +79,57 @@
   ],
   "burgers": [
     {
-      "id": "72b7",
-      "name": "Silvio Santos",
-      "meat": "Chuck",
+      "id": "7e33",
+      "name": "John Doe",
+      "meat": "Striploin",
       "bread": "White Italian",
       "extras": [
         "Bacon",
+        "Lettuce",
+        "Caramelized Onions",
         "Cheddar"
       ],
       "status": "Done"
     },
     {
-      "id": "1d8b",
-      "name": "joao",
-      "meat": "Striploin",
-      "bread": "White Italian",
+      "id": "8733",
+      "name": "Mary Jane",
+      "meat": "",
+      "bread": "",
       "extras": [
-        "Bacon"
-      ],
-      "status": "Done"
-    },
-    {
-      "id": "1887",
-      "name": "Pedro de Lara",
-      "meat": "Rump Steak",
-      "bread": "3 Cheese",
-      "extras": [
-        "Lettuce",
-        "Caramelized Onions",
-        "Picles",
-        "Tomato",
         "Cheddar",
-        "Bacon"
+        "Lettuce",
+        "Caramelized Onions"
       ],
       "status": "In Production"
     },
     {
-      "id": "e1bc",
-      "name": "Robert Abela",
+      "id": "6001",
+      "name": "John Travolta",
       "meat": "Veggie",
       "bread": "Whole Grain",
       "extras": [
-        "Picles"
+        "Picles",
+        "Caramelized Onions",
+        "Lettuce",
+        "Tomato",
+        "Cheddar"
       ],
       "status": "In Production"
     },
     {
-      "id": "a008",
-      "name": "Celso Russomano",
-      "meat": "Striploin",
-      "bread": "3 Cheese",
+      "id": "ee4c",
+      "name": "Louis Hamilton",
+      "meat": "Rump Steak",
+      "bread": "Parmesan and Oregano",
       "extras": [
         "Bacon",
         "Lettuce",
         "Tomato",
         "Cheddar"
-      ],
-      "status": "Ordered"
-    },
-    {
-      "id": "64f3",
-      "name": "Carla Peres",
-      "meat": "Chuck",
-      "bread": "Parmesan and Oregano",
-      "extras": [
-        "Bacon",
-        "Tomato",
-        "Picles"
-      ],
-      "status": "Ordered"
-    },
-    {
-      "id": "6fc3",
-      "name": "Ronaldinho Gaucho",
-      "meat": "Striploin",
-      "bread": "White Italian",
-      "extras": [
-        "Bacon",
-        "Caramelized Onions",
-        "Picles",
-        "Cheddar"
-      ],
-      "status": "Ordered"
-    },
-    {
-      "id": "2fbe",
-      "name": "Maradona",
-      "meat": "Rump Steak",
-      "bread": "White Italian",
-      "extras": [
-        "Bacon",
-        "Cheddar"
-      ],
-      "status": "Ordered"
-    },
-    {
-      "id": "9f12",
-      "name": "Manoel Gomes",
-      "meat": "Striploin",
-      "bread": "White Italian",
-      "extras": [
-        "Bacon",
-        "Cheddar",
-        "Picles"
       ],
       "status": "Ordered"
     }
   ],
-  "delivered-burgers": [
-    {
-      "id": "c244",
-      "name": "Liminha do SBT",
-      "meat": "Rump Steak",
-      "bread": "3 Cheese",
-      "extras": [
-        "Bacon",
-        "Tomato"
-      ],
-      "status": "Done"
-    }
-  ]
+  "delivered-burgers": []
 }

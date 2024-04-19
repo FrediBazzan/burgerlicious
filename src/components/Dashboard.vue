@@ -1,33 +1,32 @@
 <template>
-  <div id="burger-container">
+            <div id="burger-container">
 
-              <div class="burger-template" v-for="burger in burgers" :key="burger.id">
-                  <div class="lines"> <p> <span>ID: </span>{{ burger.id }}</p></div>
-                  <div class="lines"> <p> <span>Name: </span>{{ burger.name }}</p> </div>
-                  <div class="lines"><p> <span>Bread: </span>{{ burger.bread }} </p> </div>
-                  <div class="lines"> <p> <span>Meat: </span>{{ burger.meat }} </p></div>
+                <div class="burger-template" v-for="burger in burgers" :key="burger.id">
+                    <div class="lines"> <p> <span>Order: </span>{{ burger.id }}</p></div>
+                    <div class="lines"> <p> <span>Name: </span>{{ burger.name }}</p> </div>
+                    <div class="lines"><p> <span>Bread: </span>{{ burger.bread }} </p> </div>
+                    <div class="lines"> <p> <span>Meat: </span>{{ burger.meat }} </p></div>
 
-                  <div class="lines">
+                    <div class="lines">
                       <ul class="extras">
                           <li v-for="(extra, index) in burger.extras" :key="index"> {{ extra }} </li>
                       </ul>
-                  </div>
+                    </div>
                   
-                  <div class="status-line">
+                    <div class="status-line">
                       <div class="status-color" :class="{'ordered': burger.status === 'Ordered', 'in-production': burger.status === 'In Production', 'done': burger.status === 'Done'}"></div>
                       <select name="status" class="status" @change="statusUpdate($event, burger.id)">
                           <option v-for="s in status" :key="s.id" :value="s.type" :selected="burger.status == s.type"> {{ s.type }} </option>
                       </select>
 
-                      <button class="delivered-btn"><span class="material-symbols-outlined">task_alt</span></button>
-                      <button class="delete-btn" @click="deleteBurger(burger.id)"><span class="material-symbols-outlined">delete</span></button>
+                      <button class="delivered-btn" title="Deliver Order" @click="deliverOrder(burger)"><span class="material-symbols-outlined">task_alt</span></button>
+                      <button class="delete-btn" title="Delete Order" @click="deleteBurger(burger.id)"><span class="material-symbols-outlined">delete</span></button>
 
-                  </div>
-
+                    </div>
                       
 
-              </div>
-  </div>
+                </div>
+            </div>
 
 </template>
 
@@ -44,7 +43,8 @@ data(){
   return{
   burgers: null,
   burger_id: null,
-  status: []
+  status: [],
+  msg: null
   }
 },
 
@@ -70,18 +70,23 @@ methods: {
           this.status = data;    
       },
       
-      //method triggered by DELETE btn (@click)
-      async deleteBurger(id) {
+    //method triggered by DELETE btn (@click)
+    async deleteBurger(id) {
       
-          //HTTP request to the server. The URL is dynamic as it includes the id of the burger to be deleted. method: "DELETE" to indicate that I wanna delete the burger.
-          const req = await fetch(`http://localhost:3000/burgers/${id}`,{
+        const confirmDelivery = window.confirm('Are you sure you want to delete this burger?');
+
+            if (!confirmDelivery) {
+                return;
+            }
+
+        const req = await fetch(`http://localhost:3000/burgers/${id}`,{
               method: "DELETE"
-          });
+        });
 
           const res = await req.json();
           //calling the getOrders() method to update the list of burgers on the page.
           this.getOrders();
-      },
+    },
 
       //method triggered by <select> tag on HTML (burger status changing) (@change)
       async statusUpdate(event, id) {
@@ -102,7 +107,32 @@ methods: {
           const res = await req.json();
 
           this.burgers.find(burger => burger.id === id).status = option;
-      }
+      },
+
+      //method triggered by DELIVER-BURGER btn (@click)
+    async deliverOrder(burger) {
+
+        if (burger.status !== 'Done') {
+
+            const confirmDelivery = window.confirm('Are you sure you want to deliver this burger?');
+
+            if (!confirmDelivery) {
+                return;
+            }
+        }
+        
+        const req = await fetch('http://localhost:3000/delivered-burgers',{
+            method: "POST",
+            headers: { 'Content-Type': 'application/json'},
+            body: JSON.stringify(burger),
+        });
+
+        this.deleteBurger(burger.id);
+
+        this.getOrders();
+
+        window.location.reload();
+    }
   },
 
 mounted(){
@@ -121,8 +151,7 @@ mounted(){
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       gap: 2em;
-      width: auto;
-      margin: 1em 2em 6em 1em;
+      width: 100%;
       
   }
 
